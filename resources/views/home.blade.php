@@ -15,6 +15,39 @@
                     @endif
 
                     <h1> <a href="{{url('/addCompte')}}"> creer </a> </h1>
+
+                    <h2> Comptes bitcoins </h2>
+                    <?php
+
+                        use App\Bitcoin;
+                        $bitcoin= Bitcoin::all();
+                        foreach ($bitcoin as $bit){
+                            echo"compte: ";
+                            echo $bit->id;
+                            echo"<br>";
+                            echo "solde: ";
+                            echo $bit->valeur;
+                            echo "<hr>";
+                        }
+
+
+                    ?>
+                    <h2> Comptes etherium </h2>
+                    <?php
+
+                        use App\Monnaie;
+                        $monnaie= Monnaie::all();
+                        foreach ($monnaie as $mon){
+                            echo"compte: ";
+                            echo $mon->id;
+                            echo"<br>";
+                            echo "solde: ";
+                            echo $mon->valeur;
+                            echo "<hr>";
+                        }
+
+
+                    ?>
                 </div>
             </div>
         </div>

@@ -19,6 +19,17 @@ Route::get('/addCompte', array(
     'as'=> 'addcompte',
     'uses'=>'Controller@addCompteMethod'
 ));
+
+Route::post('/addBitcoin',array(
+    'as'=>'addBitcoin',
+    'uses'=>'Controller@addBitcoinService'
+ ));
+ Route::post('/addMonnaie',array(
+    'as'=>'addMonnaie',
+    'uses'=>'Controller@addMonnaieService'
+ ));
+
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
