@@ -34,7 +34,11 @@ Route::post('/addBitcoin',array(
     'uses'=>'Controller@bitTransactionMethod'
  ));
 
- 
+ Route::post('/ethTransaction',array(
+    'as'=>'ethTransaction',
+    'uses'=>'Controller@ethTransactionMethod'
+ ));
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

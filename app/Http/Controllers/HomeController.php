@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Bitcoin;
+use App\Monnaie;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,8 +30,15 @@ class HomeController extends Controller
         foreach($compte as $c){
             array_push($arrayCompte, $c->id);
         }
+     
+        $comptem= Monnaie::all();
+        $arrayCompteE=array();
+        foreach($comptem as $cE){
+            array_push($arrayCompteE, $cE->id);
+        }
         return view('home', array(
-            'compteB' => $arrayCompte
+            'compteB' => $arrayCompte,
+            'compteE' => $arrayCompteE
         ));
 
     }

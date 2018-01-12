@@ -88,4 +88,37 @@ class Controller extends BaseController
 
         
     }
+
+    public function ethTransactionMethod(Request $request)
+    {
+        $r = $request->all();
+
+        $montant = $r['montant'];
+        $compteD = $r['compteD'] +1;
+        $compteC = $r['compteC'] +1;
+
+        $monnaie1 = Monnaie::find($compteD);
+        $monnaie2 = Monnaie::find($compteC);
+
+        $montantD = $monnaie1->valeur - $montant;
+        $montantC = $monnaie2->valeur + $montant;
+
+        if($montantD >= 0){
+            DB::table('monnaies')
+            ->where('id', $compteD)
+            ->update(['valeur' => $montantD]);
+    
+            DB::table('monnaies')
+            ->where('id', $compteC)
+            ->update(['valeur' => $montantC]);
+
+            return redirect()->back()->with('succes', 'Transaction réussie !');
+        }
+        else{
+            return redirect()->back()->with('error', 'Transaction échouée !');
+        }
+        
+
+        
+    }
 }

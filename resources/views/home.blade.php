@@ -32,6 +32,20 @@
 
 
                     ?>
+                    {{ Form::open(array('url'=>'bitTransaction')) }}
+                   
+                    {{Form::label('compteD','Compte à débiter : ')}}
+                    {{Form::select('compteD', $compteB)}}<br>
+
+                    {{Form::label('montant','Montant à transferer : ')}}
+                    {{Form::number('montant')}}<br>
+
+                    {{Form::label('compteC','Compte à créditer : ')}}
+                    {{Form::select('compteC',$compteB)}}<br>
+        
+                    {{Form::submit('Valider')}}
+
+                {{ Form::close() }}
                     <h2> Comptes etherium </h2>
                     <?php
 
@@ -48,16 +62,16 @@
 
 
                     ?>
-                    {{ Form::open(array('url'=>'bitTransaction')) }}
+                    {{ Form::open(array('url'=>'ethTransaction')) }}
                    
                     {{Form::label('compteD','Compte à débiter : ')}}
-                    {{Form::select('compteD', $compteB)}}<br>
+                    {{Form::select('compteD', $compteE)}}<br>
 
                     {{Form::label('montant','Montant à transferer : ')}}
                     {{Form::number('montant')}}<br>
 
                     {{Form::label('compteC','Compte à créditer : ')}}
-                    {{Form::select('compteC',$compteB)}}<br>
+                    {{Form::select('compteC',$compteE)}}<br>
         
                     {{Form::submit('Valider')}}
 
