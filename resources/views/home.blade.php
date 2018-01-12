@@ -48,6 +48,22 @@
 
 
                     ?>
+                    {{ Form::open(array('url'=>'bitTransaction')) }}
+                   
+                    {{Form::label('compteD','Compte à débiter : ')}}
+                    {{Form::select('compteD', $compteB)}}<br>
+
+                    {{Form::label('montant','Montant à transferer : ')}}
+                    {{Form::number('montant')}}<br>
+
+                    {{Form::label('compteC','Compte à créditer : ')}}
+                    {{Form::select('compteC',$compteB)}}<br>
+        
+                    {{Form::submit('Valider')}}
+
+                {{ Form::close() }}
+                             
+                        
                 </div>
             </div>
         </div>

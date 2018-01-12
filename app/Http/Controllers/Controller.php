@@ -1,9 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use DB;
 use App\Users;
 use App\Bitcoin;
 use App\Monnaie;
+use Illuminate\Http\Request;
 use App\Http\Requests\addMonnaieRequest;
 use App\Http\Requests\addBitcoinRequest;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -51,5 +54,38 @@ class Controller extends BaseController
         // ce redirect nous renvoie sur la page précédente (il s'avère ici que c'est le get qui porte le même attention!!)
         //la méthode with enregistre en session un message qui une fois affiché s'effacera de la session (donc il ne peut être qu'afficher une seule fois).
         return redirect()->back();
+    }
+
+    public function bitTransactionMethod(Request $request)
+    {
+        $r = $request->all();
+
+        $montant = $r['montant'];
+        $compteD = $r['compteD'] +1;
+        $compteC = $r['compteC'] +1;
+
+        $bitcoin1 = Bitcoin::find($compteD);
+        $bitcoin2 = Bitcoin::find($compteC);
+
+        $montantD = $bitcoin1->valeur - $montant;
+        $montantC = $bitcoin2->valeur + $montant;
+
+        if($montantD >= 0){
+            DB::table('bitcoins')
+            ->where('id', $compteD)
+            ->update(['valeur' => $montantD]);
+    
+            DB::table('bitcoins')
+            ->where('id', $compteC)
+            ->update(['valeur' => $montantC]);
+
+            return redirect()->back()->with('succes', 'Transaction réussie !');
+        }
+        else{
+            return redirect()->back()->with('error', 'Transaction échouée !');
+        }
+        
+
+        
     }
 }

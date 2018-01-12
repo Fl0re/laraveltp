@@ -29,7 +29,12 @@ Route::post('/addBitcoin',array(
     'uses'=>'Controller@addMonnaieService'
  ));
 
+ Route::post('/bitTransaction',array(
+    'as'=>'bitTransaction',
+    'uses'=>'Controller@bitTransactionMethod'
+ ));
 
+ 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

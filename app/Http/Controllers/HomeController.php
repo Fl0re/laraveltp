@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Bitcoin;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $compte= Bitcoin::all();
+        $arrayCompte=array();
+        foreach($compte as $c){
+            array_push($arrayCompte, $c->id);
+        }
+        return view('home', array(
+            'compteB' => $arrayCompte
+        ));
+
     }
 }
