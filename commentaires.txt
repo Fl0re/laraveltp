@@ -1,0 +1,30 @@
+/********** Commentaire Alfonso *************/
+
+
+Florence alors ce projet?
+
+Je vois que tu n'as pas fait de seed concernant les bases de données! Pas bien..!
+je plaisante :). Merci pour les efforts fournis pendant cette formation. En même temps si tu ne fait pas ça, ça craint pour
+la fille du boss. LOL merci en tout cas pour la bonne humeur!
+
+Pour ce qui est du projet:
+
+Effectivement je peux me logger, mais je dois créer surement un compte sur lequel je puisse virer de la crypto.
+Je pense que tu as créé plusieurs comptes manuellement. Ce qui marche effectivement mais il faut se forcer à faire
+des seed quand on est sur un projet sympa. Ça nous permet de voir les erreurs qu'on a fait au niveau de la conception
+de la base de données du moins la grande majorité.
+
+Essaie aussi de créer des repo pour faire des queries en base de données.
+Allez complète ton projet!!s
+
+Pour la programmation en général:
+
+Comme pour delphine: continuer à travailler. Bon je prêche une convaincu mais par expérience je peux parler que la programmation
+est quelque chose qui paie sur le long terme et les réflexe du programmeur s'acquièrent au fûr et à mesure.
+
+Dans ton cas tu as du soutien de tous les côtés alors tu ne peux que réussir mais ce que tu dois faire impérativement c'est
+cravacher!
+
+J'espère qu'on se recroisera pour un muscat ou mieux encore un champagne.
+
+Alfonso
